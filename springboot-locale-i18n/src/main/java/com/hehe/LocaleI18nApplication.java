@@ -1,5 +1,6 @@
 package com.hehe;
 
+import com.hehe.locale.MessageUtils;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,6 +20,8 @@ public class LocaleI18nApplication {
      */
     @GetMapping("/")
     public ModelAndView index() {
+        String message = MessageUtils.get("user.welcome");
+        System.out.println(message);
         return new ModelAndView("user/login");
     }
 }
